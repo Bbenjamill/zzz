@@ -328,73 +328,73 @@
 
 // JS for Game display
 // Step 1, creating the input vale and setting the check button
-const check = document.querySelector(".check");
-const again = document.querySelector(".again");
-let randomNumber = Math.trunc(Math.random()*20 + 1);
-//    document.querySelector(".number").textContent = randomNumber
+// const check = document.querySelector(".check");
+// const again = document.querySelector(".again");
+// let randomNumber = Math.trunc(Math.random()*20 + 1);
+// //    document.querySelector(".number").textContent = randomNumber
 
 
-let score = 20;
-// Setting the highscore to the JS memory so it can recognize and start the highscore when the score is resetted.
-let highscore = 0;
+// let score = 20;
+// // Setting the highscore to the JS memory so it can recognize and start the highscore when the score is resetted.
+// let highscore = 0;
 
 
 
 
 
-check.addEventListener("click", function(){
-   let guess = Number (document.querySelector(".guess").value);
-   // The  values of the input box affects the direction of the game
-   if (!guess) {
-      document.querySelector(".message").textContent = "Please insert a number";
-   }
-   else if (guess == randomNumber) {
-      document.querySelector(".message").textContent = "Congratulations";
-      document.querySelector("body").style.backgroundColor = "blue";
-      document.querySelector(".number").style.width = "30rem"
-      if (score > highscore) {
-         highscore = score;
-         document.querySelector(".highscore").textContent = score
-      }
-   }
+// check.addEventListener("click", function(){
+//    let guess = Number (document.querySelector(".guess").value);
+//    // The  values of the input box affects the direction of the game
+//    if (!guess) {
+//       document.querySelector(".message").textContent = "Please insert a number";
+//    }
+//    else if (guess == randomNumber) {
+//       document.querySelector(".message").textContent = "Congratulations";
+//       document.querySelector("body").style.backgroundColor = "blue";
+//       document.querySelector(".number").style.width = "30rem"
+//       if (score > highscore) {
+//          highscore = score;
+//          document.querySelector(".highscore").textContent = score
+//       }
+//    }
 
-   // For guess !== randomNumber we have two different scenarios;
-   else if (guess < randomNumber) {
-      document.querySelector(".message").textContent = "Guess too low 📉";
-      // Setting the score to affect the movement of to determine if the game has been won or lost
-      score --;
-      document.querySelector(".score").textContent = score;
-      if (score < 1) {
-         document.querySelector(".score").textContent = 0;
-         document.querySelector(".message"). textContent = "Game over 😥";
-         document.querySelector("body").style.backgroundColor = "red";
-      }
-   }
+//    // For guess !== randomNumber we have two different scenarios;
+//    else if (guess < randomNumber) {
+//       document.querySelector(".message").textContent = "Guess too low 📉";
+//       // Setting the score to affect the movement of to determine if the game has been won or lost
+//       score --;
+//       document.querySelector(".score").textContent = score;
+//       if (score < 1) {
+//          document.querySelector(".score").textContent = 0;
+//          document.querySelector(".message"). textContent = "Game over 😥";
+//          document.querySelector("body").style.backgroundColor = "red";
+//       }
+//    }
 
-   else if (guess > randomNumber) {
-      document.querySelector(".message").textContent = "Guess too high 📈"
-      score --;
-      document.querySelector(".score").textContent = score;
-   if (score < 1) {
-      document.querySelector(".score").textContent = 0;
-      document.querySelector (".message").textContent = "Game over 😥";
-      document.querySelector("body").style.backgroundColor = "red";
-   }
-   }
-})
+//    else if (guess > randomNumber) {
+//       document.querySelector(".message").textContent = "Guess too high 📈"
+//       score --;
+//       document.querySelector(".score").textContent = score;
+//    if (score < 1) {
+//       document.querySelector(".score").textContent = 0;
+//       document.querySelector (".message").textContent = "Game over 😥";
+//       document.querySelector("body").style.backgroundColor = "red";
+//    }
+//    }
+// })
 
-again.addEventListener("click", function(){
-   randomNumber = Math.trunc(Math.random()*20 + 1);
-   // document.querySelector(".number").textContent = randomNumber;
-   score = 20; 
-   document.querySelector(".score").textContent = score;
-   document.querySelector(".message").textContent = "Start guessing..."
-   document.querySelector(".guess").value = ""
-   document.querySelector("body").style.backgroundColor = "#222"
-   document.querySelector(".number").style.width = "15rem"
+// again.addEventListener("click", function(){
+//    randomNumber = Math.trunc(Math.random()*20 + 1);
+//    // document.querySelector(".number").textContent = randomNumber;
+//    score = 20; 
+//    document.querySelector(".score").textContent = score;
+//    document.querySelector(".message").textContent = "Start guessing..."
+//    document.querySelector(".guess").value = ""
+//    document.querySelector("body").style.backgroundColor = "#222"
+//    document.querySelector(".number").style.width = "15rem"
 
-   // 
-})
+//    // 
+// })
 
 // Advanced array method
 // Slice This is used to slice, remove some elements in an array and leave the rest in it.
@@ -428,7 +428,7 @@ again.addEventListener("click", function(){
 // const samNewArr = alpha.join("*")
 // console.log(samNewArr);
 
-const ages = [45, 65, 50, 47, 60, 80, 33, 69, 70, 38]
+// const ages = [45, 65, 50, 47, 60, 80, 33, 69, 70, 38]
 
 // For of loop This is used to loop thru an array and it allows only one argumnet. It is used for "For of" conditions.
 // for (age of ages) { 
@@ -493,3 +493,22 @@ const ages = [45, 65, 50, 47, 60, 80, 33, 69, 70, 38]
 
 // greet.append(newElement)
 
+// Setting the Dark and Light mode of a webpage
+const changeBackground = document.querySelector(".change-background")
+
+const body = document.querySelector("body")
+
+
+changeBackground.addEventListener("click", function (){body.classList.toggle("change")})
+// body.addEventListener("keydown", function(each){
+//    console.log(each.key);
+// })
+// The keypress event listener, this is used to listen for keyboard activity, the event can be listened for and a call back function can be called to perform the necessary requirements. they are two keybaord events: The keydown and keyup
+// Chaining of methods: This is a situation when multiple function are added to a single operation, e.g account1.movement.filter((mov)=> mov > 0).map ((mov)=>mov * 2), etc, for illustration, check below
+// console.log(account1.movements.filter((mov)=> mov > 0).map((mov)=> mov * 2).reduce((acc, cur) => acc + cur, 0));
+
+// Optional chaining, in the situation, js looks thru and gives an undefined feedback
+// console.log(account1.interestRate);
+// console.log(account1?.interestRate);
+// console.log(account1.interest);
+// console.log(account2?.movement);
